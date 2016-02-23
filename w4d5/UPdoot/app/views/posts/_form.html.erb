@@ -1,0 +1,22 @@
+<% target_url = version == :new ? sub_posts_url(sub_id) : post_url(post) %>
+<% method = version == :new ? :POST : :PATCH %>
+<% submit_text = version == :new ? "Create Doot" : "Confirm" %>
+
+<form action="<%= target_url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <%= auth_token %>
+
+  <label for="post[title]">Title:</label>
+  <input type="text" name="post[title]" value="<%= @post.title %>"><br/>
+
+  <label for="post[sub_ids]">Subs:</label>
+  <% Sub.all.order(:title).each do |sub| %>
+    <input type="checkbox" name="<%= sub.title %>" value=<%= sub.id %> <%= @post.sub_ids.include(sub.id) ? "checked" : "" %>> <%= sub.title %>
+  <% end %>
+
+  <label for="post[url]">URL:</label>
+  <input type="url" name="post[url]" value="<%= @post.url %>"><br/>
+
+  <textarea name="post[content]"><%= post.content %></textarea><br/>
+  <input type="submit" value="<%= submit_text %>">
+</form>

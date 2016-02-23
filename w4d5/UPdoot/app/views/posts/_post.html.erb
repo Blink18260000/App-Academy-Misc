@@ -1,0 +1,7 @@
+<h2><%= post.title %></h1>
+<%= post.author %>
+<%= post.url %><br/>
+<p><%= post.content %></p><br/>
+<% post.subs.each do |sub| %>
+  <%= sub %>
+<% end %>

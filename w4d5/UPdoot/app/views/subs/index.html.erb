@@ -1,0 +1,8 @@
+<h1>SubDoots</h1>
+
+<% Sub.all.order(:title).each do |sub| %>
+  <%= link_to "#{sub.title}", sub_url(sub) %>
+  <p><%= "#{sub.description}" %></p>
+<% end %>
+
+<%= button_to "New SubDoot", new_sub_url, method: :get %>

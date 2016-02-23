@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./movingObject.js"></script>
+    <script src="./asteroid.js"></script>
+    <script src="./ship.js"></script>
+    <script src="./bullet.js"></script>
+    <script src="./utils.js"></script>
+    <script src="./gameView.js"></script>
+    <script src="./game.js"></script>
+  </head>
+  <body>
+
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asteroids</title>
+
+    <style>
+      html, body, canvas {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas></canvas>
+
+    <script src="./utils.js"></script>
+    <script src="./movingObject.js"></script>
+    <script src="./asteroid.js"></script>
+    <script src="./game.js"></script>
+    <script src="./ship.js"></script>
+    <script src="./bullet.js"></script>
+    <script src="./gameView.js"></script>
+    <script>
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      canvasEl.height = window.innerHeight;
+      canvasEl.width = window.innerWidth;
+      (new Asteroids.Game(
+        canvasEl.width,
+        canvasEl.height
+      )).start(canvasEl);
+      // var game = new Asteroids.Game2(
+      //   canvasEl.width,
+      //   canvasEl.height
+      // );
+      // game.start(canvasEl);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "todo_app",
+  "version": "1.0.0",
+  "description": "== README",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "babel-loader": "^6.2.2",
+    "babel-preset-react": "^6.5.0",
+    "react": "^0.14.7",
+    "webpack": "^1.12.13",
+    "react-dom": "^0.14.7",
+    "babel-core": "^6.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

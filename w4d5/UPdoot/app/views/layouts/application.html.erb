@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UPdoot</title>
+  
+  <%= csrf_meta_tags %>
+</head>
+<header>
+<% if current_user %>
+  <%= current_user.user_name %>
+  <%= button_to "Log Out", session_url, method: :delete %>
+<% else %>
+  <% unless request.original_url == new_session_url %>
+    <%= button_to "Log In", new_session_url, method: :get %>
+  <% end %>
+<% end %>
+</header>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
